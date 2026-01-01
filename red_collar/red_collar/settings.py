@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django.contrib.gis',
+    'rest_api',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -81,10 +84,11 @@ DATABASES = {
         'PASSWORD': '123456789',
         'HOST': 'localhost',
         'PORT': '5432'
-
     }
 }
 
+# Providing our User model
+AUTH_USER_MODEL = "users.Raider"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -110,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -126,3 +130,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+GDAL_LIBRARY_PATH = 'C:/Users/Omega/AppData/Local/Programs/OSGeo4W/bin/gdal312.dll'
