@@ -3,9 +3,11 @@ from django.contrib.gis.admin import GISModelAdmin
 from .models import Point, Message
 
 
-admin.site.register(Message)
-
-
 @admin.register(Point)
 class PointAdmin(GISModelAdmin):
-    list_display = ('title', 'location')
+    list_display = ('title', 'location', 'left_by')
+
+
+@admin.register(Message)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ('text_content', 'point', 'user', 'time_create')

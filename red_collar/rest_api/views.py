@@ -28,3 +28,18 @@ def api_points(request):
         points = Point.objects.all()
         serializer = PointSerializer(points, many=True)
         return Response(serializer.data)
+
+
+@authentication_classes([SessionAuthentication, BasicAuthentication])
+@api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
+def api_messages(request):
+    """Функционал: добавление сообщений к точке"""
+
+    if request.method == "POST":
+        serializer = MessageSerializer(data=request.data)
+        if serializer.is_valid():
+            # Автор сообщения - авторизованный пользователь. Берём из запроса.
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

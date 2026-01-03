@@ -20,7 +20,7 @@ class PointSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Point
-        fields = ['title', 'location']
+        fields = ['id', 'title', 'location',]
 
 
 class MessageSerializer(serializers.ModelSerializer):
@@ -28,4 +28,4 @@ class MessageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Message
-        fields = "__all__"
+        fields = ['point', 'text_content']
