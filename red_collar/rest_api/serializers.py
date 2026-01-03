@@ -18,19 +18,9 @@ class PointSerializer(serializers.ModelSerializer):
         else:
             return PointField(x=lat, y=lon, srid=4326)
 
-    def validate_left_by(self, value):
-        """Мы должны найти Искателя по username или позывному (call_sign) и вернуть его объект для добавления
-        ForeignKey к точке"""
-        try:
-            raider = Raider.objects.get(Q(username=value) | Q(call_sign=value))
-        except ObjectDoesNotExist:
-            raise serializers.ValidationError(detail="Неверно указан позывной или пользователь не зарегистрирован.")
-        else:
-            return raider
-
     class Meta:
         model = Point
-        fields = "__all__"
+        fields = ['title', 'location']
 
 
 class MessageSerializer(serializers.ModelSerializer):

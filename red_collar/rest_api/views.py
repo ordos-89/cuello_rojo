@@ -12,8 +12,6 @@ from .models import Point
 
 
 @authentication_classes([SessionAuthentication, BasicAuthentication])
-# @csrf_protect
-# @renderer_classes((JSONRenderer, ))
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def api_points(request):
@@ -22,8 +20,8 @@ def api_points(request):
     if request.method == "POST":
         serializer = PointSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            serializer.save(left_by=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     if request.method == "GET":
