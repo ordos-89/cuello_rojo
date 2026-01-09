@@ -25,7 +25,11 @@ class PointSerializer(serializers.ModelSerializer):
 
 class MessageSerializer(serializers.ModelSerializer):
     """Сериализатор модели Сообщения"""
+    point = serializers.StringRelatedField(read_only=True, label='Точка')
+    user = serializers.StringRelatedField(read_only=True, label='Искатель')
+    time_create = serializers.DateTimeField(format='%d.%m.%Y %H:%M', label='Дата и время сообщения')
+    text_content = serializers.CharField(label='Сообщение')
 
     class Meta:
         model = Message
-        fields = ['point', 'text_content']
+        fields = ['point', 'text_content', 'user', 'time_create']
