@@ -1,7 +1,5 @@
-from django.db.models import Q, ObjectDoesNotExist
 from rest_framework import serializers
 from .models import Point, Message
-from users.models import Raider
 from django.contrib.gis.db.models.fields import Point as PointField
 
 
