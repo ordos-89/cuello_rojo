@@ -32,7 +32,7 @@ def api_points(request):
         # добавление точки
         serializer = PointSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(left_by=request.user)
+            serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

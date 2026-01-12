@@ -6,8 +6,8 @@ class Point(models.Model):
     """Точка на карте"""
     title = models.CharField(max_length=255, blank=True, verbose_name="Название точки")
     location = models.PointField(verbose_name="Локация")
-    left_by = models.ForeignKey(Raider, on_delete=models.SET_NULL, null=True,
-                                verbose_name="отмечена Искателем")
+    user = models.ForeignKey(Raider, on_delete=models.SET_NULL, null=True,
+                             verbose_name="отмечена Искателем")
 
     def __str__(self):
         return self.title if self.title else "unknown"

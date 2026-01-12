@@ -5,7 +5,7 @@ from .models import Point, Message
 
 @admin.register(Point)
 class PointAdmin(GISModelAdmin):
-    list_display = ('title', 'location', 'left_by')
+    list_display = ('title', 'location', 'user')
 
 
 @admin.register(Message)

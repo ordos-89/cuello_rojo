@@ -25,10 +25,15 @@ class PointSerializer(serializers.ModelSerializer):
 
 class MessageSerializer(serializers.ModelSerializer):
     """Сериализатор модели Сообщения"""
-    point = serializers.StringRelatedField(read_only=True, label='Точка')
-    user = serializers.StringRelatedField(read_only=True, label='Искатель')
-    time_create = serializers.DateTimeField(format='%d.%m.%Y %H:%M', label='Дата и время сообщения')
+    point = serializers.PrimaryKeyRelatedField(queryset=Point.objects.all(), label='Точка')
+    user = serializers.StringRelatedField(read_only=True, label='Искатель', required=False)
+    time_create = serializers.DateTimeField(format='%d.%m.%Y %H:%M', label='Дата и время сообщения', required=False)
     text_content = serializers.CharField(label='Сообщение')
+
+    def to_representation(self, instance):
+        representation = super(MessageSerializer, self).to_representation(instance)
+        representation['point'] = instance.point.__str__()
+        return representation
 
     class Meta:
         model = Message

@@ -1,0 +1,66 @@
+{
+  "points": [
+    {"title": "Base",
+      "location": {
+        "latitude": 55,
+        "longitude": 107}
+    },
+    {
+      "title": "Inner circle: North",
+      "location": {
+        "latitude": 55.01,
+        "longitude": 107},
+      "user": 2
+    },
+
+    {
+      "title": "Inner circle: East",
+      "location": {
+        "latitude": 55,
+        "longitude": 107.01},
+      "user": 2
+    },
+    {
+      "title": "Inner circle: West",
+      "location": {
+        "latitude": 55,
+        "longitude": 106.99},
+      "user": 2
+    },
+    {
+      "title": "Inner circle: South",
+      "location": {
+        "latitude": 54.99,
+        "longitude": 107},
+      "user": 2
+    },
+        {
+      "title": "Outer circle: North",
+      "location": {
+        "latitude": 55.04,
+        "longitude": 107},
+      "user": 1
+    },
+    {
+      "title": "Outer circle: East",
+      "location": {
+        "latitude": 55,
+        "longitude": 107.04},
+      "user": 1
+    },
+    {
+      "title": "Outer circle: West",
+      "location": {
+        "latitude": 55,
+        "longitude": 106.96},
+      "user": 1
+    },
+    {
+      "title": "Outer circle: South",
+      "location": {
+        "latitude": 54.96,
+        "longitude": 107},
+      "user": 1
+    }
+  ]
+}

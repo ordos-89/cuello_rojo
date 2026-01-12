@@ -1,0 +1,49 @@
+{
+  "messages": [
+    {
+      "user": 1,
+      "point": 2,
+      "text_content": "Water tank here. Half-empty, but water is clean"
+    },
+    {
+      "user": 1,
+      "point": 3,
+      "text_content": "Good scouting point."
+    },
+    {
+      "user": 1,
+      "point": 4,
+      "text_content": "Area is clear"
+    },
+    {
+      "user": 1,
+      "point": 5,
+      "text_content": "Wires found, but hard to get. Need equipment"
+    },
+    {
+      "user": 2,
+      "point": 6,
+      "text_content": "Zombie dinosaur detected!"
+    },
+    {
+      "user": 2,
+      "point": 7,
+      "text_content": "wub-wub"
+    },
+    {
+      "user": 2,
+      "point": 8,
+      "text_content": "Is there anyone here?"
+    },
+    {
+      "user": 2,
+      "point": 9,
+      "text_content": "Wa-a-a-a-ha-a-a-a!"
+    },
+    {
+      "user": 1,
+      "point": 9,
+      "text_content": "What's happened?"
+    }
+  ]
+}
